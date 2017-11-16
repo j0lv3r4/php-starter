@@ -5,6 +5,12 @@ mix.sass(
     './public/assets/css/style.css',
 );
 
+// https://laracasts.com/discuss/channels/elixir/laravel-mix-issue-popperjs-dependency-cannot-be-found-by-boostrap-4-beta
+mix.autoload({
+  jquery: ['$', 'window.jQuery', 'jQuery'],
+  'popper.js/dist/umd/popper.js': ['Popper'],
+});
+
 mix.js(
     './source/js/scripts.js',
     './public/assets/js/scripts.js',
